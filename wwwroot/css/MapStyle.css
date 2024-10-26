@@ -1,0 +1,117 @@
+/* 此處都可自由做更動，皆為暫訂 */
+/* 基本樣式 */
+body {
+    font-family: 'Arial', sans-serif; /* 字體設置 */
+    line-height: 1.6; /* 行高 */
+    background-color: #121212; /* 深色背景 */
+    color: #f0f0f0; /* 文字顏色 */
+}
+
+/* 頁首樣式 */
+header {
+    background-color: #2E724A; /* 主題色 */
+    padding: 20px 0; /* 上下內邊距 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 增加可讀性 */
+}
+
+/* 按鈕樣式 */
+.btn {
+    background-color: #2E724A; /* 按鈕主題色 */
+    color: white; /* 按鈕文字顏色 */
+    border: none; /* 無邊框 */
+    border-radius: 5px; /* 圓角 */
+    padding: 10px 20px; /* 內邊距 */
+    transition: background-color 0.3s, box-shadow 0.3s; /* 變色過渡效果 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 增加陰影 */
+}
+
+.btn:hover {
+    background-color: #E0732A; /* 鼠標懸停顏色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 懸停時陰影效果 */
+}
+
+
+/* 表格樣式 */
+.table {
+    background-color: rgba(255, 255, 255, 0.1); /* 表格背景 */
+    border-radius: 5px; /* 圓角 */
+    color: #f0f0f0; /* 文字顏色 */
+}
+
+
+
+/* 卡片樣式 */
+.card {
+    background-color: rgba(255, 255, 255, 0.1); /* 卡片背景 */
+    border: none; /* 無邊框 */
+    border-radius: 10px; /* 圓角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+    margin: 15px; /* 外邊距 */
+    color: #f0f0f0; /* 文字顏色 */
+}
+
+/* 內容區域樣式 */
+section {
+    padding: 30px; /* 統一上下內邊距 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* 區域分隔 */
+}
+
+/* 連結樣式 */
+a {
+    color: #2E724A; /* 連結主題色 */
+    text-decoration: none; /* 去掉下劃線 */
+    transition: color 0.3s; /* 顏色過渡效果 */
+}
+
+a:hover {
+    text-decoration: underline; /* 懸停下劃線 */
+    color: #E0732A; /* 懸停顏色 */
+}
+
+/* 標題樣式 */
+h1 {
+    font-size: 36px; /* 標題大小 */
+    margin-bottom: 20px; /* 下間距 */
+    color: #f8f7f7; /* 標題顏色 */
+}
+
+h2, h3 {
+    color: #2E724A; /* 標題使用主題色 */
+    transition: color 0.3s; /* 顏色過渡效果 */
+    background-color: rgba(46, 114, 74, 0.8); /* 背景顏色 */
+    padding: 10px; /* 內邊距 */
+    border-radius: 5px; /* 圓角 */
+    color: #f0f0f0; /* 文字顏色 */
+    margin-bottom: 10px; /* 下間距 */
+}
+
+h2:hover, h3:hover {
+    color: #E0732A; /* 懸停顏色 */
+}
+
+/* 地圖區域樣式 */
+#map-section {
+    position: relative; /* 使子元素可以絕對定位 */
+}
+
+/* 咖啡針樣式(動即炸，小心Boostrap) */
+#map-section .coffee-pin {
+    position: absolute; /* 絕對定位 */
+    cursor: pointer; /* 鼠標懸停顯示為指針 */
+    width: 80px; /* 固定寬度(勿動勿動) */
+    z-index: 10; /* 確保咖啡針在最上層 */
+}
+
+/* 地圖圖片樣式 */
+#map-section img {
+    width: 100%; /* 自適應容器 */
+    height: auto; /* 自動調整高度 */
+}
+
+/* 咖啡資訊區域樣式 */
+#coffee-info {
+    background-color: #6d5743; /* 淺灰色背景 */
+    padding: 20px; /* 內邊距 */
+    border-radius: 5px; /* 圓角 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 輕微陰影 */
+}

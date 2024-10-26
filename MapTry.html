@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeMap - OpenStreetMap 範例</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <style>
+        /* 地圖容器樣式 */
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        
+        /* 按鈕區域樣式 */
+        .country-buttons {
+            margin-top: 10px;
+        }
+        
+        .country-buttons button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #2E724A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .country-buttons button:hover {
+            background-color: #FFB818;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>咖啡產地地圖</h1>
+    <p>選擇一個咖啡產地來查看該國家的咖啡資訊。</p>
+
+    <!-- 地圖區域 -->
+    <div id="map"></div>
+    @{}
+
+    <!-- 按鈕區域 -->
+    <div class="country-buttons">
+        <button onclick="showCoffeeCountry([9.145, 40.489673], '埃塞俄比亞', '知名咖啡產地，特色咖啡豆以酸味聞名。')">埃塞俄比亞</button>
+        <button onclick="showCoffeeCountry([-14.2350, -51.9253], '巴西', '世界最大咖啡出口國，產出多種風味咖啡豆。')">巴西</button>
+        <button onclick="showCoffeeCountry([-6.2088, 106.8456], '印尼', '知名以手工咖啡豆處理技術與多樣風味。')">印尼</button>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script>
+        // 初始化地圖，設置中心點和縮放層級
+        var map = L.map('map').setView([20.0, 0.0], 2);  // 世界地圖
+
+        // 添加 OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // 點擊國家按鈕後更新地圖與咖啡資訊
+        function showCoffeeCountry(coords, country, description) {
+            map.setView(coords, 5);  // 縮放到指定的產地國家
+            L.popup()
+                .setLatLng(coords)
+                .setContent("<b>" + country + "</b><br>" + description)
+                .openOn(map);
+        }
+    </script>
+
+</body>
+</html>

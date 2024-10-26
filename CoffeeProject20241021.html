@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>咖啡線上商城 - 咖啡地圖</title>
+    <link rel="stylesheet" href=".\wwwroot\css\bootstrap.css">
+    <link rel="stylesheet" href=".\wwwroot\css\MapStyle.css">
+</head>
+
+<body>
+    <!-- 頁首 -->
+    <header class="custom-header text-center p-3">
+        <h1>咖啡地圖</h1>
+        <p>探索來自世界各地的咖啡產地</p>
+    </header>
+    <!-- 需expend的區域
+     1.背景實品照片，預計為上中下放置三張照片，將佔左或右50%版面
+        1-1需討論色系與偏好，如當前暗色或白色，或其他？
+        1-2需討論背景的版型是否符合6位需求，
+     2.NAV/FOOTER、ACCOUT/SHOP、CART區域暫未放置(預估為共用)
+     3.希望可與其他頁面有更多交互區域
+     4.動畫效果尚未實作
+      -->
+
+    <div class="container">
+        <!-- 地圖區域 -->
+        <section id="map-section" class="my-4">
+            <h2>CoffeeMap</h2>
+            <img src=".\Resouce\WorldMap.png" alt="WorldMap" class="img-fluid">
+            <div class="buttons">
+                <!-- 使用咖啡針作為按鈕(目前為基礎版型)，在此處調整位置，CSS區域再調整樣式 -->
+                <img src=".\Resouce\CoffeePin.png" alt="CoffeePin" class="coffee-pin"
+                    onclick="showCoffeeInfo('colombia')" 
+                    style="top: 20%; left: 30%;">
+                <img src=".\Resouce\CoffeePin.png" alt="CoffeePin" class="coffee-pin"
+                    onclick="showCoffeeInfo('ethiopia')" 
+                    style="top: 25%; left: 50%;">
+                <img src=".\Resouce\CoffeePin.png" alt="CoffeePin" class="coffee-pin" 
+                    onclick="showCoffeeInfo('brazil')"
+                    style="top: 30%; left: 40%;">
+                <img src=".\Resouce\CoffeePin.png" alt="CoffeePin" class="coffee-pin" 
+                    onclick="showCoffeeInfo('kenya')"
+                    style="top: 35%; left: 55%;">
+                <img src=".\Resouce\CoffeePin.png" alt="CoffeePin" class="coffee-pin" 
+                    onclick="showCoffeeInfo('hawaii')"
+                    style="top: 15%; left: 70%;">
+                <img src=".\Resouce\CoffeePin.png" alt="CoffeePin" class="coffee-pin" 
+                    onclick="showCoffeeInfo('taiwan')"
+                    style="top: 20%; left: 75%;">
+            </div>
+
+        </section>
+
+        <!-- 展開後的地圖產品資訊區域：此處請勿放入上方map-section，PIN點位保持清潔 -->
+        <div id="coffee-info" class="mt-3"></div>
+
+
+
+
+
+        <!-- 豆類區域：預估實作後可更改為點擊後展開下方圓餅圖/介紹section -->
+        <section id="bean-section" class="my-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="knowledge-item">
+                        <h3>咖啡類型</h3>
+                        <p>在此處點選下方豆別豆種後，即可展開下方bean-section的詳細資訊</p>
+                        <p>可以考慮ul之外的其他選擇，或者添加按鈕</p>
+                        <p>點選下方展開詳細資訊</p>
+                    </div>
+                    <div class="knowledge-item">
+                        <h3>咖啡豆種類</h3>
+                        <ul>
+                            <li>阿拉比卡（Arabica）</li>
+                            <li>羅布斯塔（Robusta）</li>
+                        </ul>
+                    </div>
+                    <div class="knowledge-item">
+                        <h3>咖啡豆產地</h3>
+                        <ul>
+                            <li>巴西咖啡豆</li>
+                            <li>哥倫比亞咖啡豆</li>
+                            <li>衣索比亞咖啡豆</li>
+                            <li>肯亞咖啡豆</li>
+                            <li>夏威夷咖啡豆</li>
+                            <li>台灣咖啡豆</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="knowledge-item">
+                        <h3>咖啡豆處理法</h3>
+                        <ul>
+                            <li>日曬處理法</li>
+                            <li>水洗處理法</li>
+                        </ul>
+                    </div>
+                    <div class="knowledge-item">
+                        <h3>咖啡豆烘焙程度</h3>
+                        <ul>
+                            <li>極淺焙咖啡豆</li>
+                            <li>淺焙咖啡豆</li>
+                            <li>中焙咖啡豆</li>
+                            <li>中深焙咖啡豆</li>
+                            <li>城市烘焙咖啡豆</li>
+                            <li>深焙咖啡豆</li>
+                            <li>法式烘焙咖啡豆</li>
+                            <li>重焙咖啡豆</li>
+                        </ul>
+                    </div>
+                    <div class="knowledge-item">
+                        <h3>咖啡豆保存類型</h3>
+                        <ol>
+                            <li>咖啡生豆</li>
+                            <li>咖啡熟豆
+                                <ul>
+                                    <li>低溫保存</li>
+                                    <li>高壓保存</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="pic-section" class="my-4">
+            <img src=".\Resouce\CofPodExp2.png" alt="CoffeePic" class="img-fluid">
+            <!-- 避免網站過於乾燥所放置的圖片，可以隨意更改 -->
+        </section>
+
+
+        <section id="bean-section" class="my-4">
+            <h2>豆類區域</h2>
+            <!-- 咖啡知識區(內部兩處ROW分割，左側為文字介紹(配合URL展開商品分類)，右側為圓餅圖等區域) -->
+            <div class="row">
+
+                <div class="col-md-6">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>豆類名稱</th>
+                                <th>產地</th>
+                                <th>特點</th>
+                                <th>最佳沖泡方式</th>
+                                <th>詳細資訊</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>阿拉比卡</td>
+                                <td>哥倫比亞</td>
+                                <td>嘗試多一點介紹讓他更完整</td>
+                                <td>手沖、法式壓濾</td>
+                                <td><button class="btn btn-info" onclick="showDetails('arabica')">查看詳情</button></td>
+                                <!-- 上方按鈕點開後，下方資訊區域展開，並顯示該地區的咖啡豆資訊 -->
+                            </tr>
+                            <tr>
+                                <td>羅布斯塔</td>
+                                <td>巴西</td>
+                                <td>濃烈的香氣，苦味較強</td>
+                                <td>義式濃縮</td>
+                                <td><button class="btn btn-info" onclick="showDetails('robusta')">查看詳情</button></td>
+                            </tr>
+                            <tr>
+                                <td>範例範例</td>
+                                <td>範例</td>
+                                <td>範例範例範例範例範例範例範例</td>
+                                <td>範例範例</td>
+                                <td><button class="btn btn-info" onclick="showDetails('brazil')">查看詳情</button></td>
+                            </tr>
+                            <tr>
+                                <td>範例範例</td>
+                                <td>範例</td>
+                                <td>範例範例範例範例範例範例範例</td>
+                                <td>範例範例</td>
+                                <td><button class="btn btn-info" onclick="showDetails('brazil')">查看詳情</button></td>
+                            </tr>
+                            <tr>
+                                <td>範例範例</td>
+                                <td>範例</td>
+                                <td>範例範例範例範例範例範例範例</td>
+                                <td>範例範例</td>
+                                <td><button class="btn btn-info" onclick="showDetails('brazil')">查看詳情</button></td>
+                            </tr>
+                        
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="col-md-6">
+                    <h3>豆類詳情</h3>
+                    <div id="bean-details">
+                        <!-- 未放置，(此處為曲線圖或圓餅圖)預估點擊後才變更下方資訊-->
+                        <img src=".\wwwroot\css\BeanDetails.png" alt="BeanDetails" class="img-fluid">
+                        <div class="text-center">
+                            <h4 id="coffee-name">這邊是可以當作詳則資訊的文字</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center my-4">
+                <a href="shop.html" class="btn btn-success">前往購物清單</a>
+            </div>
+        </section>
+
+
+        <!-- 頁尾通用的咖啡知識區域，下面資訊較亂後續整理 -->
+        <section id="knowledge-section" class="my-4">
+            <div class="container">
+                <div class="knowledge-item">
+                    <h3>咖啡豆保存類型</h3>
+                    <ol>
+                        <li>咖啡生豆</li>
+                        <li>咖啡熟豆
+                            <ul>
+                                <li>低溫保存</li>
+                                <li>高壓保存</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <img src=".\Resouce\CofPodExp2.png" alt="CoffeePic" class="img-fluid">
+                <!-- 避免網站過於乾燥所放置的圖片，可以隨意更改 -->
+                <div class="knowledge-item">
+                    <h3>沖泡方法指南</h3>
+                    <p>範例範例範例，也許這邊也可以切成兩塊三塊</p>
+                </div>
+                <img src=".\Resouce\CofPodExp2.png" alt="CoffeePic" class="img-fluid">
+                <!-- 避免網站過於乾燥所放置的圖片，可以隨意更改 -->
+                <div class="knowledge-item">
+                    <h3>咖啡風味分析</h3>
+                    <p>範例範例範例，也許這邊也可以切成兩塊三塊</p>
+                </div>
+                <img src=".\Resouce\CofPodExp2.png" alt="CoffeePic" class="img-fluid">
+                <!-- 避免網站過於乾燥所放置的圖片，可以隨意更改 -->
+                <div class="knowledge-item">
+                    <h3>常見咖啡飲品</h3>
+                    <p>範例範例範例，也許這邊也可以切成兩塊三塊</p>
+                </div>
+                <img src=".\Resouce\CofPodExp2.png" alt="CoffeePic" class="img-fluid">
+                <!-- 避免網站過於乾燥所放置的圖片，可以隨意更改 -->
+            </div>
+        </section>
+
+        <script src=".\wwwroot\js\jquery-3.7.1.js"></script>
+        <script src=".\wwwroot\js\MapScript.js"></script>
+
+</body>
+
+</html>
