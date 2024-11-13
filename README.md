@@ -1,29 +1,38 @@
- 
+# **CoffeeMap - Coffee Venue Map**
 
-##CoffeeMap - Coffee Venue Map
-#Project Description
-CoffeeMap is an interactive map showcasing coffee-related venues around the world, using OpenStreetMap as the map service. The purpose of this project is to help coffee enthusiasts explore various coffee culture-related venues, such as coffee exhibitions, coffee competitions, coffee factories, and professional training centers. Users can view the locations of each venue on the map, along with detailed information about the venue's offerings and events, immersing them in the diversity of coffee culture.
+## **Project Description**
 
-#Installation and Usage
-Clone or download this repository:
+**`CoffeeMap`** is an interactive map showcasing coffee-related venues around the world, using **OpenStreetMap** as the map service. The purpose of this project is to help coffee enthusiasts explore various coffee culture-related venues, such as coffee exhibitions, coffee competitions, coffee factories, and professional training centers. Users can view the locations of each venue on the map, along with detailed information about the venue's offerings and events, immersing them in the diversity of coffee culture.
 
-After extracting the files, navigate to the folder, which contains the HTML, CSS, and JS files.
+## **Installation and Usage**
 
-Open the index.html file to view the coffee venue map in your browser.
+1. Clone or download this repository:
+    
+    ```bash
+    bash
+    複製程式碼
+    git clone https://github.com/TANANIS/CoffeeMap.git
+    
+    ```
+    
+2. After extracting the files, navigate to the folder, which contains the HTML, CSS, and JS files.
+3. Open the **`index.html`** file to view the coffee venue map in your browser.
+4. To modify the map's features or styles, edit the corresponding CSS and JS files.
 
-To modify the map's features or styles, edit the corresponding CSS and JS files.
+## **Features**
 
-#Features
-Interactive Map: Users can pan, zoom, and view the locations of coffee culture venues around the world.
-Venue Information: Each venue's marker provides basic details such as name, address, description, and event information.
-Search Functionality: Users can search for specific coffee venues by keywords.
-Categorized Markers: Venues are categorized into different types (e.g., coffee exhibitions, coffee factories, coffee training centers).
-#Technologies and Tools
-HTML: For the structure of the website.
-CSS: For styling and layout of the website.
-JavaScript: For the interactive map functionality and search features.
-OpenStreetMap: For the map display and location markers.
-Leaflet.js: A JavaScript library for loading and manipulating OpenStreetMap data.
+- **Interactive Map**: Users can pan, zoom, and view the locations of coffee culture venues around the world.
+- **Venue Information**: Each venue's marker provides basic details such as name, address, description, and event information.
+- **Search Functionality**: Users can search for specific coffee venues by keywords.
+- **Categorized Markers**: Venues are categorized into different types (e.g., coffee exhibitions, coffee factories, coffee training centers).
+
+## **Technologies and Tools**
+
+- **HTML**: For the structure of the website.
+- **CSS**: For styling and layout of the website.
+- **JavaScript**: For the interactive map functionality and search features.
+- **OpenStreetMap**: For the map display and location markers.
+- **Leaflet.js**: A JavaScript library for loading and manipulating OpenStreetMap data.
 
 ### 咖啡地圖頁面內容結構
 
